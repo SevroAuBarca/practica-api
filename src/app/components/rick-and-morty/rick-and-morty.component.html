@@ -1,0 +1,67 @@
+<h1>Rick & Morty</h1>
+<div class="container-fluid">
+  <div class="row row-cols-4">
+    <div class="col mb-2" *ngFor="let character of dataCharacters">
+      <div
+        class="card text-white
+         {{ character.status === 'Alive' && 'bg-success' }}
+         {{ character.status === 'Dead' && 'bg-danger' }}
+         {{ character.status === 'Presumed dead' && 'bg-warning' }}
+         {{ character.status === 'unknown' && 'bg-dark' }}"
+        style="width: 19rem"
+      >
+        <img
+          class="card-img-top p-2"
+          src="{{ character.image }}"
+          alt="{{ character.name }}"
+          load="lazy"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ character.name }}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li
+            class="list-group-item
+            {{ character.status === 'Alive' && 'bg-success' }}
+            {{ character.status === 'Dead' && 'bg-danger' }}
+            {{ character.status === 'Presumed dead' && 'bg-warning' }}
+            {{ character.status === 'unknown' && 'bg-dark' }}"
+          >
+            Specie: {{ character.species }}
+          </li>
+          <li
+            class="list-group-item
+            {{ character.status === 'Alive' && 'bg-success' }}
+            {{ character.status === 'Dead' && 'bg-danger' }}
+            {{ character.status === 'Presumed dead' && 'bg-warning' }}
+            {{ character.status === 'unknown' && 'bg-dark' }}"
+          >
+            Status: {{ character.status }}
+          </li>
+          <li
+            class="list-group-item
+            {{ character.status === 'Alive' && 'bg-success' }}
+            {{ character.status === 'Dead' && 'bg-danger' }}
+            {{ character.status === 'Presumed dead' && 'bg-warning' }}
+            {{ character.status === 'unknown' && 'bg-dark' }}"
+          >
+            Origin: {{ character.origin.name }}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <ul class="pagination">
+        <li class="page-item" (click)="getAll('-')">
+          <a class="page-link" href="#">Previous</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">{{ pages }}</a>
+        </li>
+        <li class="page-item" (click)="getAll('+')">
+          <a class="page-link" href="#">Next</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

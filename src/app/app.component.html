@@ -1,33 +1,5 @@
 <nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand">Navbar</a>
-  <form class="form-inline">
-    <input
-      class="form-control mr-sm-2"
-      type="search"
-      placeholder="Search"
-      aria-label="Search"
-    />
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-      Search
-    </button>
-  </form>
+  <a class="navbar-brand" href="/">Breaking Bad</a>
+  <a class="navbar-brand" href="/RyM">Rick & Morty</a>
 </nav>
-<h1>Breaking Bad</h1>
-<div class="container">
-  <div class="row row-cols-4">
-    <div class="col" *ngFor="let character of dataCharacters">
-      <div class="card" style="width: 18rem">
-        <img src="{{ character.img }}" class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">{{ character.name }}</h5>
-          <p class="card-text">
-            {{ character.status }}
-          </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Content here -->
-</div>
+<router-outlet></router-outlet>

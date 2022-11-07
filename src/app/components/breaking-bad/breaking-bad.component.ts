@@ -1,14 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { BreackingBadService } from './services/breacking-bad.service';
+import { BreackingBadService } from 'src/app/services/breacking-bad.service';
 
-BreackingBadService;
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  selector: 'app-breaking-bad',
+  templateUrl: './breaking-bad.component.html',
+  styleUrls: ['./breaking-bad.component.css'],
 })
-export class AppComponent implements OnInit {
-  title = 'router-practica';
+export class BreakingBadComponent implements OnInit {
   dataCharacters: any[] = [];
   constructor(private BB: BreackingBadService) {}
 

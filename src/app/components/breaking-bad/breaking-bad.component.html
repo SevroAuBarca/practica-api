@@ -1,0 +1,53 @@
+<h1>Breaking Bad</h1>
+<div class="container-fluid">
+  <div class="row row-cols-4">
+    <div class="col mb-2" *ngFor="let character of dataCharacters">
+      <div
+        class="card text-white
+         {{ character.status === 'Alive' && 'bg-success' }}
+         {{ character.status === 'Deceased' && 'bg-danger' }}
+         {{ character.status === 'Presumed dead' && 'bg-warning' }}
+         {{ character.status === 'Unknown' && 'bg-dark' }}"
+        style="width: 19rem"
+      >
+        <img
+          class="card-img-top p-2"
+          src="{{ character.img }}"
+          alt="{{ character.name }}"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ character.name }}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li
+            class="list-group-item
+            {{ character.status === 'Alive' && 'bg-success' }}
+            {{ character.status === 'Deceased' && 'bg-danger' }}
+            {{ character.status === 'Presumed dead' && 'bg-warning' }}
+            {{ character.status === 'Unknown' && 'bg-dark' }}"
+          >
+            NickName: {{ character.nickname }}
+          </li>
+          <li
+            class="list-group-item
+            {{ character.status === 'Alive' && 'bg-success' }}
+            {{ character.status === 'Deceased' && 'bg-danger' }}
+            {{ character.status === 'Presumed dead' && 'bg-warning' }}
+            {{ character.status === 'Unknown' && 'bg-dark' }}"
+          >
+            Status: {{ character.status }}
+          </li>
+          <li
+            class="list-group-item
+            {{ character.status === 'Alive' && 'bg-success' }}
+            {{ character.status === 'Deceased' && 'bg-danger' }}
+            {{ character.status === 'Presumed dead' && 'bg-warning' }}
+            {{ character.status === 'Unknown' && 'bg-dark' }}"
+          >
+            Actor: {{ character.portrayed }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
